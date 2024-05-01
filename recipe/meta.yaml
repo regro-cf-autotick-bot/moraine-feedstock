@@ -1,5 +1,5 @@
 {% set name = "moraine" %}
-{% set version = "0.0.1" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/moraine-{{ version }}.tar.gz
-  sha256: 0d26c34787d6e5fd1aed7044a9252d6aef5201fe0fc967120c8ed8c09214d87d
+  sha256: e934ff95d40c3dfc498ac0989565f8c098042504175179a819b82a7238f16ba6
 
 build:
   noarch: python
@@ -23,6 +23,20 @@ requirements:
     - numpy
     - scipy
     - matplotlib-base
+    - fastcore
+    - numba
+    - dask
+    - zarr
+    - pyproj
+    - tqdm
+    - toml
+    - numexpr
+    - numcodecs
+    - pandas
+    - holoviews
+    - datashader
+    - colorcet
+    - spatialpandas
 
 test:
   imports:
