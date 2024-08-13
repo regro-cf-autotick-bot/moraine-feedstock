@@ -1,5 +1,5 @@
 {% set name = "moraine" %}
-{% set version = "0.8.0" %}
+{% set version = "0.8.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/moraine-{{ version }}.tar.gz
-  sha256: b27247b14479d4930443c93eec16e9c54fa49e78852a74177ee4da076a4664fb
+  sha256: be8956eb9fd7b1bed51141aaaa4284c3d5f991dfaede162bc4f1dd35c2747bcb
 
 build:
   noarch: python
