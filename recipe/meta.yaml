@@ -6,20 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/moraine-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/moraine-{{ version }}.tar.gz
   sha256: be8956eb9fd7b1bed51141aaaa4284c3d5f991dfaede162bc4f1dd35c2747bcb
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - numpy
     - scipy
     - matplotlib-base
@@ -45,6 +45,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/kanglcn/moraine
